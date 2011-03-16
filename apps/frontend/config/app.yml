@@ -1,0 +1,11 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+
+
+# default values
+all:
+  sf_guard_plugin:
+     remember_key_expiration_age: 2592000
+     remember_cookie_name: allocab_customer
+     success_signout_url: fare_request/new

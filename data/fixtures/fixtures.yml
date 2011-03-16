@@ -1,0 +1,263 @@
+# # Populate this file with data to be loaded by your ORM's *:data-load task.
+# # You can create multiple files in this directory (i.e. 010_users.yml,
+# # 020_articles.yml, etc) which will be loaded in alphabetical order.
+# # 
+# # See documentation for your ORM's *:data-load task for more information.
+# 
+# User:
+#   fabien:
+#     username: fabien
+#     password: changeme
+#     name:     Fabien Potencier
+#     email:    fabien.potencier@symfony-project.com
+#   kris:
+#     username: Kris.Wallsmith
+#     password: changeme
+#     name:     Kris Wallsmith
+#     email:    kris.wallsmith@symfony-project.com
+sfGuardUser:
+  jean:
+    username:       jean
+    password:       jean
+
+  kaiss:
+    username:       kaiss
+    password:       kaiss
+
+  paul:
+    username:       paul
+    password:       paul
+
+  jacques:
+    username:       jacques
+    password:       jacques
+
+sfGuardPermission:
+  customer:
+    name:           customer
+    description:    Customer permission
+
+  driver:
+    name:           driver
+    description:    Driver permission
+
+sfGuardGroup:
+  customer:
+    name:           customer
+    description:    Customer group
+
+  driver:
+    name:           driver
+    description:    Driver group
+
+sfGuardGroupPermission:
+  customer:
+    group_id:       customer
+    permission_id:  customer
+
+  driver:
+    group_id:       driver
+    permission_id:  driver
+
+sfGuardUserGroup:
+  jean:
+    group_id: driver
+    user_id: jean
+
+  kaiss:
+    group_id: driver
+    user_id: kaiss
+
+Driver:
+  jean:
+    user_id: jean
+    name: Jean
+    taxi_code: JEAN
+    hq: Paris
+    hq_area: 50
+
+  kaiss:
+    user_id: kaiss
+    name: Kaiss
+    taxi_code: KAISS
+    hq: Paris
+    hq_area: 50
+
+  paul:
+    user_id: paul
+    name: Paul
+    taxi_code: PAUL
+    hq: Aix en provence
+    hq_area: 50
+
+  jacques:
+    user_id: jacques
+    name: Jacques
+    taxi_code: JACQUES
+    hq: Paris
+    hq_area: 50
+
+DriverCustomer:
+#  tom:
+#    gender: m
+#    driver_id: kaiss
+#    first_name: Thomas
+#    name: Tiercelin
+#    email: t.tiercelin@gmail.com
+#    phone_country: 33
+#    phone_number: O642357604
+
+#  yan:
+#    gender_id: m
+#    phone_country_id: france
+#    driver_id: kaiss
+#    first_name: Yanis
+#    name: Kiansky
+#    email: yaniskiansky@gmail.com
+#    phone_number: 665533917
+
+#  charles:
+#    gender_id: m
+#    phone_country_id: france
+#    driver_id: kaiss
+#    first_name: Charles
+#    name: Armataffet
+#    email: charles.armataffet@gmail.com
+#    phone_number: 678445686
+
+#  boubou:
+#    gender_id: m
+#    phone_country_id: france
+#    driver_id: jean
+#    first_name: Robert
+#    name: Nesta
+#    email: jr@bar.com
+#    phone_number: 642357604
+
+DriverAccountCategory:
+  course:
+    name: C.A. Course
+
+  participation:
+    name: Participation
+
+  prime:
+    name: Prime
+
+#Fare:
+#  f1:
+#    driver_id: kaiss
+#    customer_id: tom
+#    start_address: Stade de France
+#    end_address: 18 boulevard Barbes, 750018 Paris
+#    date: 02/01/2011
+#    time: 15:00
+#    valid: 1
+
+#  f3:
+#    driver_id: kaiss
+#    customer_id: yan
+#    start_address: 35 rue du luxembourg, paris
+#    end_address: 18 boulevard Barbes, 750018 Paris
+#    date: 02/01/2011
+#    time: 19:00
+#    valid: 1
+
+#  f2:
+#    driver_id: kaiss
+#    customer_id: charles
+#    start_address: 18 boulevard Barbes, 750018 Paris
+#    end_address: Stade de France
+#    date: 02/01/2011
+#    time: 18:30
+#    valid: 1
+
+#  f4:
+#    driver_id: kaiss
+#    customer_id: tom
+#    start_address: Aéroport Charles de Gaulle
+#    end_address: 18 boulevard Barbes, 750018 Paris
+#    date: 02/02/2011
+#    time: 10:00
+#    valid: 1
+
+#  f5:
+#    driver_id: kaiss
+#    customer_id: yan
+#    start_address: Aéroport Charles de Gaulle
+#    end_address: 35 rue du luxembourg, paris
+#    date: 02/02/2011
+#    time: 09:00
+#    valid: 1
+
+#  f6:
+#    driver_id: jean
+#    customer_id: yan
+#    start_address: Aéroport Charles de Gaulle
+#    end_address: 35 rue du luxembourg, paris
+#    date: 02/02/2011
+#    time: 09:00
+#    valid: 1
+
+#  f7:
+#    driver_id: kaiss
+#    customer_id: yan
+#    start_address: place pigalle, paris
+#    end_address: 35 rue du luxembourg, paris
+#    date: 08/02/2011
+#    time: 09:00
+#    valid: 1
+
+#  f8:
+#    driver_id: kaiss
+#    customer_id: tom
+#    start_address: Aéroport Charles de Gaulle
+#    end_address: 15 boulevard malheserbes, paris
+#    date: 08/02/2011
+#    time: 20:00
+#    valid: 1
+
+#  f9:
+#    driver_id: kaiss
+#    customer_id: charles
+#    start_address: Aéroport Charles de Gaulle
+#    end_address: 35 rue du luxembourg, paris
+#    date: 02/02/2011
+#    time: 20:00
+#    valid: 1
+
+#  f10:
+#    driver_id: kaiss
+#    customer_id: tom
+#    start_address: 15 rue de belleville, paris
+#    end_address: 23 rue de courcelles, paris
+#    date: 03/20/2011
+#    time: 18:00
+#    valid: 1
+
+#  f11:
+#    driver_id: kaiss
+#    customer_id: yan
+#    start_address: 100 avenue des champs elysees, paris
+#    end_address: 25 rue de la paix, paris
+#    date: 04/22/2011
+#    time: 17:30
+#    valid: 1
+
+#  f12:
+#    driver_id: kaiss
+#    customer_id: charles
+#    start_address: 50 rue du faubourg saint honoré, paris
+#    end_address: 30 avenue foch, paris
+#    date: 04/22/2011
+#    time: 08:30
+#    valid: 1
+
+#  f13:
+#    driver_id: kaiss
+#    customer_id: boubou
+#    start_address: 19 rue de la viabert, lyon
+#    end_address: place bellecour, lyon
+#    date: 01/10/2011
+#    time: 09:30
+#    valid: 1

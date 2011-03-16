@@ -1,0 +1,17 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    language:     fr
+    #robots:       index, follow
+
+  stylesheets:    [driver/reset.css,driver/main.css,driver/2col.css,driver/style.css,driver/mystyle.css]
+
+  javascripts:    [driver/jquery.js,driver/switcher.js,driver/toggle.js,driver/ui.core.js,driver/ui.tabs.js]
+
+  has_layout:     false
+  layout:         layout

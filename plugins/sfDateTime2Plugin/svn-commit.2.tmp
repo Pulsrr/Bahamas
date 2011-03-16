@@ -1,0 +1,6 @@
+- added finalDayOfMonth patch and a test for the function
+--This line, and those below, will be ignored--
+
+M    test/unit/sfDateTest.php
+M    package.xml.tmpl
+M    lib/sfTime.class.php

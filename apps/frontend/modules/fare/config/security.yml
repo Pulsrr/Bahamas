@@ -1,0 +1,11 @@
+create:
+  is_secure: false
+
+show:
+  is_secure: false
+
+countDriversInArea:
+  is_secure: false
+
+default:
+  is_secure: true

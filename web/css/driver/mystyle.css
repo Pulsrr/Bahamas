@@ -1,0 +1,19 @@
+/* WRITE YOUR CSS CODE HERE */
+a.button {
+    padding:5px;
+    padding-left:25px;
+    margin-right:10px;
+    border:1px solid #aaaaaa;
+}
+
+.valid {
+    background:url('../../images/driver/ico-done.gif') no-repeat 5px center;
+}
+
+.cancel {
+    background:url('../../images/driver/ico-delete.gif') no-repeat 5px center;
+}
+
+.transfert {
+    background:url('../../images/driver/switcher-2col.gif') no-repeat 5px center;
+}

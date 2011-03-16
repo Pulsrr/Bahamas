@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Allocab | Réservation de Mototaxi en ligne
+    description:  Réservez gratuitement votre course de Mototaxi (région parisienne)
+    keywords:     Savoie libre !
+    language:     fr
+    robots:       noindex, nofollow
+
+  stylesheets:    [main.css, ../js/jquery-ui/css/ui-lightness/jquery-ui-1.8.9.custom.css]
+
+  javascripts:    [jquery-ui/js/jquery-1.4.4.min.js,jquery-ui/js/jquery-ui-1.8.9.custom.min.js]
+
+  has_layout:     true
+  layout:         layout

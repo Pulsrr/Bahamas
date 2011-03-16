@@ -1,0 +1,125 @@
+propel:
+  password_retrieve:
+    id: ~
+    email: { type: varchar(100), required: true }
+    token: { type: varchar(255), unique: true }
+    created_at: ~
+
+  location:
+    id: ~
+    adress: varchar(255)
+    count: { type: integer, default: 1 }
+
+  driver:
+    id: ~
+    user_id: { type: integer, foreignTable: sf_guard_user, foreignReference: id, required: true }
+    name: varchar(100)
+    first_name: varchar(100)
+    email: varchar(100)
+    phone: varchar(100)
+    taxi_code: { type: varchar(50), required: true, unique: true }
+    hq: varchar(255)
+    hq_lat: { type: varchar(100) }
+    hq_lng: { type: varchar(100) }
+    hq_area: integer
+    created_at: ~
+
+  driver_notification:
+    id: ~
+    driver_id: { type: integer, foreignTable: driver, foreignReference: id, required: true }
+    message: longvarchar
+    created_at:
+
+  driver_customer:
+    id: ~
+    gender: { type: varchar(30), required: true }
+    driver_id: { type: integer, foreignTable: driver, foreignReference: id }
+    user_id: { type: integer, foreignTable: sf_guard_user, foreignReference: id }
+    name: { type: varchar(100), required: true }
+    first_name: { type: varchar(100), required: true }
+    email: { type: varchar(100), required: true, unique: true }
+    phone_country: { type: varchar(10), required: true }
+    phone_number: { type: varchar(100), required: true }
+    phone_international: { type: varchar(110) }
+    postal_code: { type: varchar(100), required: true }
+    created_at: ~
+
+  driver_account_category:
+    id: ~
+    name: varchar(100)
+    vat: decimal
+
+  driver_account:
+    driver_id: { type: integer, foreignTable: driver, foreignReference: id, required: true }
+    category_id: { type: integer, foreignTable: driver_account_category, foreignReference: id, required: true }
+    amount: decimal
+    created_at: ~
+
+  fare:
+    id: ~
+    hash: { type: varchar(255), required: true, unique: true }
+    driver_id: { type: integer, foreignTable: driver, foreignReference: id }
+    customer_id: { type: integer, foreignTable: driver_customer, foreignReference: id }
+    start_address: { type: varchar(255), required: true }
+    flight_number:  varchar(100)
+    start_lat: { type: varchar(100) }
+    start_lng: { type: varchar(100) }
+    end_address: { type: varchar(255), required: true }
+    end_lat: { type: varchar(100) }
+    end_lng: { type: varchar(100) }
+    date: { type: date, required: true }
+    time: { type: time, required: true }
+    taxi_code: varchar(50)
+    datetime: timestamp
+    duration: { type: integer }
+    distance: { type: integer }
+    real_start_lat: { type: varchar(100) }
+    real_start_lng: { type: varchar(100) }
+    real_end_lat: { type: varchar(100) }
+    real_end_lng: { type: varchar(100) }
+    real_duration: { type: integer }
+    real_distance: { type: integer }
+    price: decimal
+    supplement: decimal
+    vat: decimal
+    price_including_tax: decimal
+    confirmed: { type: boolean, default: 0 }
+    valid: { type: boolean, default: 0 }
+    taken: { type: boolean, default: 0 }
+    finished: { type: boolean, default: 0 }
+    done: { type: boolean, default: 0 }
+    customer_available: { type: boolean, default: 0 }
+    special_request: longvarchar
+    created_at: ~
+
+  fare_request:
+    id: ~
+    hash: { type: varchar(255), required: true, unique: true }
+    start_address: { type: varchar(255), required: true }
+    flight_number:  varchar(100)
+    end_address: { type: varchar(255), required: true }
+    date: { type: date, required: true }
+    time: { type: time, required: true }
+    taxi_code: varchar(50)
+
+  prime:
+    id: ~
+    driver_id: { type: integer, foreignTable: driver, foreignReference: id, required: true }
+    payer_id: { type: integer, foreignTable: driver, foreignReference: id, required: true }
+    fare_id: { type: integer, foreignTable: fare, foreignReference: id, required: true }
+    amount: decimal
+    created_at: ~
+
+  participation:
+    id: ~
+    driver_id: { type: integer, foreignTable: driver, foreignReference: id, required: true }
+    fare_id: { type: integer, foreignTable: fare, foreignReference: id, required: true }
+    amount: decimal
+    created_at: ~
+
+  user_unavailability:
+    id: ~
+    user_id: { type: integer, foreignTable: sf_guard_user, foreignReference: id, required: true }
+    fare_id: { type: integer, foreignTable: fare, foreignReference: id, onDelete: cascade }
+    from_datetime: { type: timestamp, required: true }
+    to_datetime: { type: timestamp, required: true }

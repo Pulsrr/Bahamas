@@ -1,0 +1,6 @@
+finalDayOfMonth
+--This line, and those below, will be ignored--
+
+M    test/unit/sfDateTest.php
+M    package.xml.tmpl
+M    lib/sfTime.class.php
